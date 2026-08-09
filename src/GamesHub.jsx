@@ -5826,7 +5826,7 @@ export default function GamesHub() {
             </p>
 
             <div className="flex gap-2 mb-5">
-              <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Suchen…"
+              <input id="game-search" name="game-search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Suchen…"
                 className="flex-1 min-w-0 bg-neutral-900 border border-neutral-800 focus:border-neutral-600 rounded-lg px-3 py-2 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors" />
               <button onClick={randomGame}
                 className="text-xs tracking-[0.12em] text-neutral-300 hover:text-neutral-100 border border-neutral-800 hover:border-neutral-600 rounded-lg px-3 py-2 transition-colors flex-shrink-0">
@@ -5849,10 +5849,10 @@ export default function GamesHub() {
               </div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="rounded-full flex-shrink-0" style={{ width: 10, height: 10, background: HX }} />
-                <input value={nameX} onChange={(e) => setNameX(e.target.value)} placeholder="Spieler ✕"
+                <input id="player-x" name="player-x" value={nameX} onChange={(e) => setNameX(e.target.value)} placeholder="Spieler ✕"
                   className="w-0 flex-1 bg-neutral-950 border border-neutral-800 focus:border-neutral-600 rounded-md px-2.5 py-1.5 text-xs text-neutral-200 placeholder-neutral-600 outline-none transition-colors" />
                 <span className="text-lg text-neutral-100 tabular-nums px-1">{totals.p1}<span className="text-neutral-600 mx-1.5">:</span>{totals.p2}</span>
-                <input value={nameO} onChange={(e) => setNameO(e.target.value)} placeholder="Spieler ○"
+                <input id="player-o" name="player-o" value={nameO} onChange={(e) => setNameO(e.target.value)} placeholder="Spieler ○"
                   className="w-0 flex-1 bg-neutral-950 border border-neutral-800 focus:border-neutral-600 rounded-md px-2.5 py-1.5 text-xs text-neutral-200 placeholder-neutral-600 outline-none transition-colors text-right" />
                 <span className="rounded-full flex-shrink-0" style={{ width: 10, height: 10, background: HO }} />
               </div>
