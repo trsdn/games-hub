@@ -2,7 +2,7 @@
   "name": "games-hub",
   "private": true,
   "version": "1.0.0",
-  "description": "21 abstrakte Hotseat-Brettspiele für zwei Personen",
+  "description": "21 abstract hotseat board games for two players",
   "license": "MIT",
   "author": "Torsten Mahr",
   "homepage": "https://trsdn.github.io/games-hub/",

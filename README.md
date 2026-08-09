@@ -3,32 +3,34 @@
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/trsdn/games-hub/deploy-pages.yml?branch=main&label=GitHub%20Pages)](https://trsdn.github.io/games-hub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Eine Sammlung von 21 abstrakten Brettspielen für zwei Personen an einem Gerät.
-Mehrere Spiele bieten zusätzlich einen Computergegner.
+A collection of 21 abstract board games for two players sharing one device.
+Several games also include a computer opponent. The interface is available in
+German and English.
 
-**Live spielen:** https://trsdn.github.io/games-hub/
+**Play online:** https://trsdn.github.io/games-hub/
 
-## Funktionen
+## Features
 
-- 21 Spiele in vier Kategorien
-- Hotseat-Modus für zwei Personen
-- Bot-Modus für ausgewählte Spiele
-- Session-Statistik und frei wählbare Spielernamen
-- Zufällige Spielauswahl und Münzwurf
-- Soundeffekte, haptisches Feedback und responsive Oberfläche
+- 21 games across four categories
+- German and English interface
+- Hotseat mode for two local players
+- Bot mode for selected games
+- Session statistics and custom player names
+- Random game selection and coin flip
+- Sound effects, haptic feedback, and responsive design
 
-## Enthaltene Spiele
+## Included games
 
-| Kategorie | Spiele |
+| Category | Games |
 | --- | --- |
-| Reihe bilden | Super-Tic-Tac-Toe, Connect Four, Pentago, Gobblet Gobblers, Gomoku, Order & Chaos, Quarto |
-| Verbinden & erobern | Hex, Lines of Action, Amazonen, Käsekästchen |
-| Schlagen & fangen | Reversi, Kōnane, Breakthrough, Hnefatafl, Clobber, Fanorona |
-| Ziehen & rennen | Quoridor, Onitama, Halma, Mancala |
+| Make a row | Super Tic-Tac-Toe, Connect Four, Pentago, Gobblet Gobblers, Gomoku, Order & Chaos, Quarto |
+| Connect & conquer | Hex, Lines of Action, Amazons, Dots and Boxes |
+| Capture | Reversi, Kōnane, Breakthrough, Hnefatafl, Clobber, Fanorona |
+| Move & race | Quoridor, Onitama, Halma, Mancala |
 
-## Entwicklung
+## Development
 
-Voraussetzung: Node.js 22 oder neuer.
+Requires Node.js 22 or newer.
 
 ```bash
 git clone https://github.com/trsdn/games-hub.git
@@ -37,7 +39,7 @@ npm install
 npm run dev
 ```
 
-Produktions-Build erstellen:
+Create and preview a production build:
 
 ```bash
 npm run build
@@ -46,10 +48,9 @@ npm run preview
 
 ## Deployment
 
-Pushes auf `main` werden durch
-[GitHub Actions](.github/workflows/deploy-pages.yml) automatisch gebaut und auf
-GitHub Pages veröffentlicht.
+Every push to `main` is built and published to GitHub Pages by
+[GitHub Actions](.github/workflows/deploy-pages.yml).
 
-## Lizenz
+## License
 
-Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
+This project is licensed under the [MIT License](LICENSE).

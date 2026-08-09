@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
+import { usePageTranslation } from "./i18n.js";
 
 const HX = "#fb7185", HO = "#7dd3fc";
 
@@ -5646,6 +5647,13 @@ const P1L = { hnefatafl: "D", orderchaos: "order" };
 const P2L = { hnefatafl: "A", orderchaos: "chaos" };
 
 export default function GamesHub() {
+  const [language, setLanguage] = useState(() => {
+    try {
+      return localStorage.getItem("games-hub-language") === "en" ? "en" : "de";
+    } catch {
+      return "de";
+    }
+  });
   const [active, setActive] = useState(null);
   const [visited, setVisited] = useState([]);
   const [resetKeys, setResetKeys] = useState({});
@@ -5661,6 +5669,8 @@ export default function GamesHub() {
   const winLockRef = useRef(0);
   const repLockRef = useRef(0);
   const wrapRef = useRef(null);
+
+  usePageTranslation(language);
 
   useEffect(() => { soundRef.current = sound; }, [sound]);
   useEffect(() => { activeRef.current = active; }, [active]);
@@ -5782,6 +5792,18 @@ export default function GamesHub() {
                 <span className="ml-3 text-xs tracking-[0.2em] text-neutral-500 truncate hidden sm:inline">{g.name.toUpperCase()}</span>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
+                <div className="flex rounded-lg border border-neutral-700 overflow-hidden" aria-label="Sprache">
+                  {["de", "en"].map((code) => (
+                    <button
+                      key={code}
+                      onClick={() => setLanguage(code)}
+                      aria-label={code === "de" ? "Deutsch" : "English"}
+                      className={"px-2 py-1.5 text-[10px] tracking-wider transition-colors " + (language === code ? "bg-neutral-700 text-neutral-100" : "text-neutral-500 hover:text-neutral-200")}
+                    >
+                      {code.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
                 {sc.p1 + sc.p2 + sc.dr > 0 ? (
                   <span className="text-xs text-neutral-400 flex items-center gap-1.5 mr-1">
                     <span className="rounded-full inline-block" style={{ width: 9, height: 9, background: HX }} />
@@ -5814,6 +5836,18 @@ export default function GamesHub() {
             <div className="flex items-end justify-between mb-1">
               <h1 className="text-2xl tracking-[0.25em] font-light text-neutral-100">HOTSEAT</h1>
               <div className="flex items-center gap-3">
+                <div className="flex rounded-lg border border-neutral-800 overflow-hidden" aria-label="Sprache">
+                  {["de", "en"].map((code) => (
+                    <button
+                      key={code}
+                      onClick={() => setLanguage(code)}
+                      aria-label={code === "de" ? "Deutsch" : "English"}
+                      className={"px-2 py-1 text-[10px] tracking-wider transition-colors " + (language === code ? "bg-neutral-700 text-neutral-100" : "text-neutral-600 hover:text-neutral-300")}
+                    >
+                      {code.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
                 <button onClick={() => setSound(!sound)}
                   className={"text-[11px] tracking-[0.1em] border rounded-lg px-2.5 py-1 transition-colors " + (sound ? "text-neutral-400 border-neutral-700 hover:border-neutral-500" : "text-neutral-600 border-neutral-800 line-through")}>
                   TON
