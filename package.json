@@ -2,6 +2,14 @@
   "name": "games-hub",
   "private": true,
   "version": "1.0.0",
+  "description": "21 abstrakte Hotseat-Brettspiele für zwei Personen",
+  "license": "MIT",
+  "author": "Torsten Mahr",
+  "homepage": "https://trsdn.github.io/games-hub/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trsdn/games-hub.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,14 +17,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.4.1",
-    "vite": "^6.3.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.3.5"
   }
 }
